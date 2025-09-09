@@ -57,7 +57,8 @@ class Predator extends GraphicObject {
       float dTheta = rotDir * TWO_PI * turnsPerSec * (deltaTime / 1000.0f);
       angle += dTheta;
       velocity.set(0, 0);
-    } else { // CHASING
+    } 
+    else { 
       float speed = max(0.5f, chaseSpeedMean + chaseSpeedSd * (float)randomGaussian());
       if (dist > 1e-3) {
         PVector dir = toPrey.copy().normalize().mult(speed);

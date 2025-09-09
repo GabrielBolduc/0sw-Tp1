@@ -1,10 +1,10 @@
 class Proie extends GraphicObject {
   
-  // === BASES (conservées) ===
+  // 
   float angle = 0.0;
-  float size  = 40;   // diamètre = 40 → rayon = 20 (critère)
+  float size  = 40;   // diamètre = 40 → rayon = 20 
   
-  // vitesse de déplacement (4.5 px/frame)
+  // vitesse de deplacement (4.5 px/frame)
   float speed = 4.5;
   
   Proie (int x, int y) {
@@ -44,7 +44,7 @@ class Proie extends GraphicObject {
     pushMatrix();
       translate(location.x, location.y);
       fill (0, 0, 200);
-      ellipse (0, 0, size, size); // diamètre = 40 → rayon = 20
+      ellipse (0, 0, size, size); // diametre = 40 → rayon = 20
     popMatrix();
   }
 }

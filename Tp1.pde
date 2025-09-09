@@ -49,18 +49,17 @@ void updateRunning() {
   proie.location.y = constrain(proie.location.y, 0, height);
 
   // 2) Victoire si la proie atteint la forêt de droite
-  //    (côté droit du cercle dans la bande verte)
   if (proie.location.x + proie.size/2f >= width - forestWidth) {
     if (gameState == GameState.RUNNING) {
       System.out.println("Jeu gagnant");
       gameState = GameState.WIN;
-      restartAtMs = millis() + 2000; // redémarrage dans 2 s
+      restartAtMs = millis() + 2000; // redemarage
     }
   }
 
   // 3) IA + update des predateurs
   for (Predator p : predators) {
-    p.updateAI(deltaTime, proie);  // état attente/poursuite, FOV, etc.
+    p.updateAI(deltaTime, proie);  
     p.update(deltaTime);
   }
 
@@ -70,7 +69,7 @@ void updateRunning() {
       if (p.touches(proie)) {
         println("Jeu termine");
         gameState = GameState.LOSE;
-        restartAtMs = millis() + 2000; // redémarrage dans 2 s
+        restartAtMs = millis() + 2000;
         break;
       }
     }
@@ -81,10 +80,9 @@ void updateRunning() {
 }
 
 void resetGame() {
-  // Recrée la proie (spawn forêt gauche, centrée verticalement)
   proie = new Proie(forestWidth/2, height/2);
 
-  // Régénère 10..15 prédateurs répartis dans le champ
+  // Renere predateurs
   predators.clear();
   int n = (int)random(MIN_PREDS, MAX_PREDS + 1);
   for (int i = 0; i < n; i++) {
