@@ -1,7 +1,7 @@
 
 enum GameState { RUNNING, WIN, LOSE }
 GameState gameState = GameState.RUNNING;
-int restartAtMs = 0;               // millis() auquel on relance
+int restartAtMs = 0;              
 
 int forestWidth = 100;
 
@@ -26,12 +26,12 @@ void draw() {
   deltaTime   = currentTime - previousTime;
   previousTime = currentTime;
 
-  // fond
   drawBackground();
 
   if (gameState == GameState.RUNNING) {
     updateRunning();
-  } else { 
+  } 
+  else { 
     drawEntities();
     if (millis() >= restartAtMs) {
       resetGame();
@@ -82,7 +82,7 @@ void updateRunning() {
 void resetGame() {
   proie = new Proie(forestWidth/2, height/2);
 
-  // Renere predateurs
+  // genere predateurs
   predators.clear();
   int n = (int)random(MIN_PREDS, MAX_PREDS + 1);
   for (int i = 0; i < n; i++) {

@@ -11,12 +11,10 @@ class Predator extends GraphicObject {
   float turnsPerSec = random(0.25, 0.5);
   int rotDir = (random(1) < 0.8) ? +1 : -1;
 
-  // Cône de vision: 120, distance 50px (écart-type 5)
   float fovDeg       = 120;
   float fovDistMean  = 50;
   float fovDistSd    = 5;
 
-  // Poursuite: 3 px/frame (écart-type 1)
   float chaseSpeedMean = 3.0;
   float chaseSpeedSd   = 1.0;
 
@@ -87,12 +85,11 @@ class Predator extends GraphicObject {
 
   // Collision
   boolean touches(Proie p) {
-    float predatorRadius = size;        // rayon du triangle
-    float preyRadius     = p.size * 0.5; // p.size est le DIAMÈTRE
+    float predatorRadius = size; // rayon du triangle
+    float preyRadius = p.size * 0.5; // p.size est le diametre
     return PVector.dist(location, p.location) <= (predatorRadius + preyRadius);
   }
-
-  // utilitaire : différence angulaire signée [-PI, PI]
+  
   float angleDiff(float a, float b) {
     float d = (b - a + PI) % (TWO_PI);
     if (d < 0) d += TWO_PI;
