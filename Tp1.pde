@@ -1,11 +1,9 @@
-
 enum GameState { RUNNING, WIN, LOSE }
 GameState gameState = GameState.RUNNING;
 int restartAtMs = 0;              
 
 int forestWidth = 100;
 
-// entite
 ArrayList<Predator> predators = new ArrayList<Predator>();
 Proie proie;
 
@@ -63,7 +61,7 @@ void updateRunning() {
     p.update(deltaTime);
   }
 
-  // 4) Défaite si contact avec un predateur
+  // 4) Defaite si contact avec un predateur
   if (gameState == GameState.RUNNING) {
     for (Predator p : predators) {
       if (p.touches(proie)) {

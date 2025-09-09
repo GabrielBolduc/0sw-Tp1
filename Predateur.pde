@@ -7,7 +7,8 @@ class Predator extends GraphicObject {
   
   PredatorState state = PredatorState.WAITING;
 
-  // 0.25–0.5 tour/s ; 80% horaire / 20% anti-horaire
+  // 0.25–0.5 tour/s 
+  //80% horaire / 20% anti-horaire
   float turnsPerSec = random(0.25, 0.5);
   int rotDir = (random(1) < 0.8) ? +1 : -1;
 
@@ -32,7 +33,7 @@ class Predator extends GraphicObject {
   }
 
   void updateAI(int deltaTime, Proie prey) {
-    // portée de vision tirer  N(50,5), bornée (stabilité)
+    // portée de vision tirer
     float sight = constrain( fovDistMean + fovDistSd * (float)randomGaussian(), 10, 120 );
 
     // vecteur vers la proie

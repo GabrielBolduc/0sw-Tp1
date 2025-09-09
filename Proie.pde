@@ -41,7 +41,7 @@ class Proie extends GraphicObject {
     pushMatrix();
       translate(location.x, location.y);
       fill (0, 0, 200);
-      ellipse (0, 0, size, size); // diametre = 40 → rayon = 20
+      ellipse (0, 0, size, size);
     popMatrix();
   }
 }
