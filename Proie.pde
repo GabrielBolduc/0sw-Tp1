@@ -1,7 +1,7 @@
 class Proie extends GraphicObject {
   
   float angle = 0.0;
-  float size  = 40;   // diametre = 40 → rayon = 20 
+  float size  = 20;   // diametre = 40 → rayon = 20 
   float speed = 4.5;
   
   Proie (int x, int y) {
